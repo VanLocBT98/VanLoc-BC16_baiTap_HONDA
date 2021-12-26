@@ -1,0 +1,1393 @@
+* {
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: black;
+}
+
+html {
+    overflow-x: hidden;
+    background-color: #fff;
+    scroll-behavior: smooth;
+    font-size: 10px;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    outline: none;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    background-color: #fff;
+    z-index: 10;
+}
+
+.header-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px 10px;
+
+}
+
+.nav_overlay {
+    position: fixed;
+    top: 63px;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: none;
+    animation: fadeIn linear 0.3s;
+}
+
+.nav-menu {
+    position: fixed;
+    width: 350px;
+    top: 62px;
+    left: 0;
+    bottom: 0;
+    background-color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    transform: translate(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s linear;
+    z-index: 10;
+}
+
+.nav-menu li {
+    padding: 20px 40px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.nav_input {
+    display: none;
+}
+
+.nav_input-search {
+    display: none;
+}
+
+.nav_input:checked~.nav_overlay {
+    display: block;
+}
+
+.nav_input:checked~.nav-menu {
+    transform: translate(0%);
+    opacity: 1;
+    visibility: visible;
+}
+
+.form-search {
+    position: fixed;
+    top: 60px;
+    right: 0;
+    left: 0;
+    background-color: #eee;
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(0, -100%);
+    transition: all .2s linear;
+    z-index: 9;
+}
+
+.search-input {
+    background-color: transparent;
+    color: #000;
+    border: transparent;
+    outline: none;
+    height: 53px;
+    margin-top: 8px;
+    margin-bottom: 5px;
+    margin-left: 20px;
+    padding: 9px;
+    font-size: 30px;
+    width: 90%;
+}
+
+.form-search button {
+    font-size: 14px;
+    font-weight: 600;
+    font-style: normal;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    padding-left: 30px;
+}
+
+.nav_input-search:checked~.form-search {
+    transform: translate(0, -0%);
+    opacity: 1;
+    visibility: visible;
+}
+
+.nav_input:checked~.form-search {
+    display: none;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.hearder-nav-menu {
+    display: flex;
+    position: relative;
+}
+
+.icon-close-nav {
+    position: absolute;
+    top: 17px;
+    left: 42px;
+    font-size: 26px;
+    display: none;
+}
+
+.hearder-nav-menu span {
+    font-size: 14px;
+    font-weight: 600;
+    position: absolute;
+    left: 32px;
+    top: 6px;
+}
+
+.header-img {
+    width: 164px;
+    height: 35px;
+    margin-top: -3px;
+}
+
+.header-nav-search {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.header-nav-search li span {
+    margin-right: 50px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.header-nav-search li i {
+    font-size: 34px;
+}
+
+.header-nav-menu-icon {
+    font-size: 26px;
+    padding-right: 20px;
+}
+
+/* phần slider */
+
+.slider {
+    margin-top: 63px;
+}
+
+.slider-alert {
+    position: relative;
+}
+
+.slider-alert button {
+    display: none !important;
+}
+
+.slider-alert .slick-dots {
+    display: block !important;
+    position: absolute;
+    right: 100px;
+    top: 10px;
+}
+
+.slider-alert .slick-dots li {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    color: black !important;
+}
+
+.slider-alert ul {
+    list-style: none;
+}
+
+.slider-alert .slick-dots li .slick-active {
+    color: #FF9600;
+}
+
+.slider-alert-item {
+    display: flex;
+}
+
+.slider-alert-item .alert {
+    position: relative;
+    background-color: #FF9600;
+    width: 20%;
+    padding: 30px 0 30px 50px;
+    display: flex;
+}
+
+.slider-alert-item .alert-1 {
+    width: 15%;
+}
+
+.slider-alert-item .alert::after {
+    content: "";
+    position: absolute;
+    width: 149px;
+    height: 114px;
+    top: -27px;
+    right: -65px;
+    transform: rotate(-56deg);
+    background-color: #FF9600;
+}
+
+.slider-alert-item .alert i {
+    font-size: 14px;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    border: 1px solid white;
+    border-radius: 50%;
+    background-color: #fff;
+    color: #FF9600;
+}
+
+.slider-alert-item .alert h2 {
+    padding-left: 10px;
+    color: white;
+}
+
+.slider-alert-item .content {
+    width: 60%;
+    font-size: 14px;
+    padding: 30px 0 30px 80px;
+    font-weight: bold;
+}
+
+.slider-alert-item .content span {
+    color: #FF9600;
+    padding-left: 15px;
+}
+
+/* phần carousel */
+.carousel {
+    background-image: url('./img/Gogo22-011-GOGO22-EXTRAS_RED_STROBE_08399_Desktop.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 800px;
+    z-index: 5;
+}
+
+/* phần product */
+.product-content {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    cursor: pointer;
+}
+
+.product-content-item+.product-content-item {
+    animation-delay: 0.3s;
+}
+
+.product-content .item-logo {
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.42857143;
+    padding: 25px 0 75px;
+}
+
+.product-content-item {
+    position: relative;
+}
+
+.product-content .item-title img {
+    margin-top: 25px;
+    width: 70%;
+}
+
+.product-content .item-logo p {
+    color: #fff;
+    margin: 20px 0;
+}
+
+.product-content .item-logo span {
+    color: #fff;
+    border-bottom: 2px solid #fff;
+    padding-bottom: 5px;
+}
+
+.product-content .nomal p {
+    color: #000;
+    margin: 20px 0;
+}
+
+.product-content .nomal span {
+    color: #000;
+    border-bottom: 2px solid #000;
+}
+
+.product-content .blu {
+    background-color: #007CC2;
+}
+
+.product-content .red {
+    background-color: #cc0001;
+}
+
+.product-content .black {
+    background-color: #000;
+}
+
+.product-content img {
+    object-fit: cover;
+
+}
+
+.product-content .blu::after {
+    content: '';
+    position: absolute;
+    right: -45px;
+    top: 43%;
+    border-width: 20px 26px;
+    border-style: solid;
+    border-color: transparent transparent transparent #007CC2;
+    z-index: 2;
+}
+
+.product-content .motos-aft::after,
+.product-content .jet-aft::after,
+.product-content .engnine-aft::after {
+    content: '';
+    position: absolute;
+    right: -45px;
+    top: 43%;
+    border-width: 20px 26px;
+    border-style: solid;
+    border-color: transparent transparent transparent #cc0001;
+    z-index: 2;
+}
+
+.product-content .black::after {
+    content: '';
+    position: absolute;
+    left: -45px;
+    top: 43%;
+    border-width: 20px 26px;
+    border-style: solid;
+    border-color: transparent black transparent transparent;
+    z-index: 2;
+}
+
+.product-content .mowre-title::after {
+    content: '';
+    position: absolute;
+    left: 43%;
+    top: 97%;
+    border-width: 20px 26px;
+    border-style: solid;
+    border-color: #fff transparent transparent transparent;
+    z-index: 2;
+}
+
+.product-content .marine-aft::after {
+    content: '';
+    position: absolute;
+    left: -45px;
+    top: 43%;
+    border-width: 20px 26px;
+    border-style: solid;
+    border-color: transparent #fff transparent transparent;
+    z-index: 2;
+}
+
+.product-content .racing-aft::after {
+    content: '';
+    position: absolute;
+    left: 43%;
+    top: -34px;
+    border-width: 20px 26px;
+    border-style: solid;
+    border-color: transparent transparent #cc0001 transparent;
+    z-index: 2;
+}
+
+.product-img-autos {
+    background: url('./img/homepage-brand-autos-desktop.webp');
+}
+
+.product-img-motos {
+    background-image: url('./img/homepage-brand-powersports-desktop.jpg');
+}
+
+.product-img-acura {
+    background-image: url('./img/homepage-brand-acura-nsx-desktop.webp');
+
+}
+
+.product-img-mower {
+    background-image: url('./img/homepage-brand-mower-desktop-v1.jpg');
+
+}
+
+.product-img-jet {
+    background-image: url('./img/homepage-brand-hondajet-desktop.jpg');
+
+}
+
+.product-img-racing {
+    background-image: url('./img/homepage-brand-auto-racing-desktop.jpg');
+
+}
+
+.product-img-engnine {
+    background-image: url('./img/homepage-brand-engine-desktop.jpg');
+
+}
+
+.product-img-marine {
+    background-image: url('./img/homepage-brand-marine-desktop.webp');
+
+}
+
+.product-content .img {
+    overflow: hidden;
+}
+
+.image {
+    transition: transform .5s ease-out;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.mo:hover .product-img-autos {
+    transform: scale(1.1, 1.1);
+}
+
+.ha:hover .product-img-motos {
+    transform: scale(1.1, 1.1);
+
+}
+
+.bo:hover .product-img-acura {
+    transform: scale(1.1, 1.1);
+
+}
+
+.ba:hover .product-img-mower {
+
+    transform: scale(1.1, 1.1);
+}
+
+.na:hover .product-img-jet {
+    transform: scale(1.1, 1.1);
+
+}
+
+.sa:hover .product-img-racing {
+    transform: scale(1.1, 1.1);
+
+}
+
+.by:hover .product-img-engnine {
+    transform: scale(1.1, 1.1);
+
+}
+
+.ta:hover .product-img-marine {
+    transform: scale(1.1, 1.1);
+
+}
+
+.item-autos {
+    grid-column: 2/ span 2;
+    grid-row: 1 / span 2;
+}
+
+.item-motos,
+.item-racing {
+    grid-column: 5/ span 2;
+}
+
+.item-acura {
+    grid-column: 4/ span 2;
+}
+
+.item-marine,
+.item-jet {
+    grid-column: 3/ span 2;
+
+}
+
+
+
+/* phần subheader */
+.subheader {
+    text-align: center;
+}
+
+.subheader .subheader-title {
+    font-size: 20px;
+    padding: 35px 0;
+    letter-spacing: 2px;
+    background: #fff;
+}
+
+.subvisible {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.subvisible-item {
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    transition: transform .5s ease-out;
+}
+
+.subvisible-item {
+    padding: 200px 0 30px;
+}
+
+.subvisible-item+.subvisible-item {
+    animation-delay: 0.3s;
+}
+
+.subvisible-item h2 {
+    font-size: 25px;
+    color: white;
+    padding: 10px 0 80px;
+}
+
+.subvisible-item p {
+    margin: auto;
+    width: 60%;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 500;
+    color: white;
+    padding: 50px 0;
+}
+
+.subvisible-item span,
+.subvisible-item span i {
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+}
+
+.sub-item-1 {
+    background-image: url('./img/homepage-p2-pillar-mobility-desktop-2019.jpg');
+}
+
+.sub-item-2 {
+    background-image: url('./img/homepage-p2-pillar-environment-desktop.jpg');
+}
+
+.sub-item-3 {
+    background-image: url('./img/homepage-p2-pillar-community-desktop.jpg');
+}
+
+.sub-item-4 {
+    background-image: url('./img/homepage-p2-pillar-safety-desktop.jpg');
+}
+
+.business {
+    position: relative;
+    transition: transform .5s ease-out;
+}
+
+.business-title {
+    position: absolute;
+    width: 600px;
+    margin: auto;
+    text-align: center;
+    top: 7%;
+    right: 50%;
+    transform: translateX(50%);
+}
+
+.business-title h1 {
+    font-size: 36px;
+    margin-bottom: 18px;
+    letter-spacing: 1px;
+}
+
+.business-title p {
+    font-size: 16px;
+    width: 100%;
+    margin: 0 auto 18px;
+    line-height: 22px;
+}
+
+.business-title span {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.business img {
+    width: 100%;
+    animation-delay: 0.3s;
+}
+
+.show {
+    width: 90%;
+    margin: auto;
+    padding-bottom: 70px;
+}
+
+.show>h1 {
+    text-align: center;
+    font-size: 20px;
+    padding: 30px 0;
+    letter-spacing: 2px;
+    background: #fff;
+}
+
+.show-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    animation-delay: 0.3s;
+}
+
+.show-list .img,
+.show-list.slick-img,
+.show-list .show-track-img {
+    overflow: hidden;
+}
+
+.show-item img,
+.show-slick img,
+.show-slick img {
+    width: 100%;
+    transition: transform .5s ease-out;
+}
+
+.show-item+.show-item {
+    animation-delay: 0.3s;
+}
+
+.show-item img:hover,
+.slick-img img:hover,
+.show-track-img img:hover {
+    transform: scale(1.1, 1.1);
+}
+
+.show-item .show-item-title,
+.show-item .show-item-2 {
+    background-color: #f9f9f9;
+    position: relative;
+    text-align: center;
+    margin: auto;
+    padding: 40px 20px 130px;
+}
+
+.show-item-2 {
+    position: relative;
+    text-align: center;
+    margin: auto;
+    padding: 40px 20px 111px;
+}
+
+.show-item .show-item-title::before,
+.show-item-2::before {
+    content: '';
+    position: absolute;
+    border-width: 20px 26px;
+    border-style: solid;
+    border-color: transparent transparent white transparent;
+    top: -40px;
+    left: 50%;
+}
+
+.show-item .show-item-title h1,
+.show-item-2 h1 {
+    font-weight: 700;
+    font-size: 20px;
+    margin: 0 0 20px;
+}
+
+.show-item .show-item-title p,
+.show-item-2 p {
+    margin: 0 0 10px;
+    font-size: 15px;
+}
+
+.show-item .show-item-title a,
+.show-item .show-item-title a i,
+.show-item-2 a,
+.show-item-2 a i {
+    font-size: 16px;
+    font-weight: 700;
+    color: #337ab7;
+    text-transform: uppercase;
+}
+
+.show-item .show-item-title a:hover,
+.show-item .show-item-title a:hover i {
+    color: #23527c;
+}
+
+.show-slick {
+    position: relative;
+}
+
+.show-slick img {
+    width: 100%;
+}
+
+.icon-sclick,
+.icon-sclick i {
+    color: white;
+    position: absolute;
+    font-size: 40px;
+    top: 5px;
+    right: 8px;
+    z-index: 5;
+}
+
+.slick-img {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.slick-img .slick-next,
+.slick-img .slick-prev {
+    position: absolute;
+    display: block !important;
+    z-index: 5;
+    visibility: hidden;
+    color: white;
+}
+
+.slick-img .slick-prev {
+    top: 50%;
+    left: -42px;
+}
+
+.slick-img .slick-prev::after {
+    content: '<';
+    visibility: visible;
+    font-size: 40px;
+}
+
+.slick-img .slick-next {
+    top: 50%;
+    right: 10px;
+}
+
+.slick-img .slick-next::after {
+    content: ">";
+    visibility: visible;
+    font-size: 40px;
+
+}
+
+.show-contact {
+    position: relative;
+    background: #f2f2f2;
+    height: 80%;
+}
+
+.show-contact .twitter-icon i {
+    color: #4d9fe0;
+    position: absolute;
+    font-size: 25px;
+    top: 5px;
+    right: 8px;
+    z-index: 5;
+}
+
+.show-contact-title {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0 12px;
+}
+
+.show-contact-title .logo {
+    display: flex;
+    align-items: center;
+}
+
+.show-contact-title .logo img {
+    border-radius: 5px;
+}
+
+.show-contact-title .logo-title {
+    padding-left: 20px;
+    line-height: 15px;
+}
+
+.show-contact-title .logo-title span {
+    font-size: 14px;
+}
+
+.show-contact-title p {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.show-contact-title span {
+    font-size: 14px;
+}
+
+.show-contact-title .logo-title a,
+.show-contact-title p>a,
+.show-contact-title span>a {
+    color: #337ab7
+}
+
+.show-contact-title .logo-title a:hover,
+.show-contact-title p>a:hover,
+.show-contact-title span>a:hover,
+.twitter-action a:hover,
+.twitter-action i:hover,
+.info ul li a:hover {
+    color: #23527c;
+}
+
+.twitter-action {
+    margin-top: 10px;
+    padding-right: 10px;
+    font-size: 14px;
+    color: #8f8f8f
+}
+
+.twitter-action a {
+    padding-right: 10px;
+}
+
+/* phần footer*/
+.footer {
+    background-color: #eeeeee;
+}
+
+.footer ul {
+    list-style: none;
+}
+
+.footer-list {
+    width: 92%;
+    margin: auto;
+}
+
+.footer-link {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+}
+
+.footer-link .footer-link-item h2 {
+    color: #8f8f8f;
+    text-transform: uppercase;
+    font-size: 20px;
+    margin: 37px 0 20px;
+}
+
+.footer-link .footer-link-item ul li {
+    margin-bottom: 30px;
+    font-size: 13px;
+    font-weight: bolder;
+}
+
+.footer-link .footer-link-item ul li p {
+    padding-top: 8px;
+    color: #8f8f8f;
+}
+
+.footer-link .footer-link-item ul li a:hover,
+.footer-link .footer-link-item ul li a:hover i {
+    color: #8f8f8f;
+}
+
+.footer-info {
+    text-align: center;
+}
+
+.footer-info-icon ul,
+.info ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-info-icon ul li {
+    padding: 20px 8px;
+}
+
+.footer-info-icon ul li:hover {
+
+    opacity: .85 !important;
+}
+
+.footer-info-title {
+    padding: 8px 0;
+}
+
+.footer-info-title p {
+    padding: 10px 0;
+    font-size: 13px;
+}
+
+.footer-info-title p a {
+    text-decoration: underline;
+    color: #337ab7;
+}
+
+.footer-info-title p a:hover {
+    color: #000;
+}
+
+.info {
+    font-size: 15px;
+    padding-bottom: 12px;
+}
+
+.info ul li a {
+    padding: 4px 4px 20px;
+    color: #337ab7;
+    font-weight: bold;
+}
+
+/* phần reponseve  */
+
+@media screen and (max-width: 1200px) {
+
+    .header-nav-menu-icon,
+    .header-nav-search li i {
+        font-size: 22px;
+    }
+
+    .hearder-nav-menu span {
+        font-size: 12px;
+        left: 26px
+    }
+
+    .header-nav-search li span {
+        font-size: 12px;
+    }
+
+    .slider-alert-item .content {
+        font-size: 12px;
+    }
+
+    .slider-alert-item .alert h2 {
+        z-index: 2;
+        font-size: 13px;
+    }
+
+    .slider-alert-item .alert i {
+        z-index: 2;
+    }
+
+    .slider-alert-item .alert {
+        width: 26%;
+    }
+
+    .slider-alert-item .alert-1 {
+        width: 17%;
+    }
+
+    .slider-alert-item .alert::after {
+        height: 109px;
+    }
+
+    .carousel {
+        height: 400px;
+    }
+
+    .product-content .item-title img {
+        margin: 0;
+    }
+
+    .product-content .item-logo p {
+        margin: 10px 0;
+    }
+
+    .product-content .item-logo {
+        padding-bottom: 30px;
+    }
+
+    .product-content .mowre-title::after,
+    .product-content .racing-aft::after {
+        left: 39%
+    }
+
+    .show-item .show-item-title h1,
+    .show-item-2 h1 {
+        font-size: 17px;
+        margin-bottom: 15px;
+    }
+
+    .show-contact-title {
+        top: 44%
+    }
+
+    .show-contact-title p {
+        font-size: 18px;
+    }
+
+    .show-item .show-item-title p,
+    .show-item-2 p {
+        font-size: 12px;
+    }
+
+    .show-item .show-item-title a,
+    .show-item-2 a {
+        font-size: 15px;
+    }
+
+    .show-item .show-item-title,
+    .show-item-2 {
+        padding: 40px 20px;
+    }
+
+    .show-item .show-item-title::before,
+    .show-item-2::before {
+        left: 43%;
+    }
+
+    .show {
+        padding-bottom: 0;
+    }
+
+    .show-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .show-contact {
+        height: 100%;
+    }
+
+    .slick-img {
+        height: 510px;
+    }
+
+    .footer {
+        margin-top: 40px;
+    }
+
+    s .footer-link .footer-link-item ul li,
+    .footer-info-title p {
+        font-size: 14px;
+        padding-right: 10px;
+    }
+
+    .info {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .search-input {
+        font-size: 20px;
+        width: 80%;
+    }
+
+    .product-content {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 250px;
+        grid-template-areas:
+            "a b b c"
+            "h b b d"
+            "i f f e"
+            "n m p o"
+            "k l z t"
+    }
+
+    .blu {
+        grid-area: a;
+    }
+
+    .item-autos {
+        grid-area: b;
+    }
+
+    .motos-aft {
+        grid-area: c;
+    }
+
+    .item-motos {
+        grid-area: d;
+    }
+
+    .black {
+        grid-area: e;
+    }
+
+    .item-acura {
+        grid-area: f;
+    }
+
+    .mowre-title {
+        grid-area: h;
+    }
+
+    .item-mower {
+        grid-area: i;
+    }
+
+    .engnine-aft {
+        grid-area: k;
+    }
+
+    .item-engnine {
+        grid-area: l;
+    }
+
+    .marine-aft {
+        grid-area: m;
+    }
+
+    .item-marine {
+        grid-area: n;
+    }
+
+    .jet-aft {
+        grid-area: o;
+    }
+
+    .item-jet {
+        grid-area: p;
+    }
+
+    .racing-aft {
+        grid-area: z;
+    }
+
+    .item-racing {
+        grid-area: t;
+    }
+
+    .product-content .motos-aft::after {
+        right: 37%;
+        top: 97%;
+        border-color: #cc0001 transparent transparent transparent;
+    }
+
+    .product-content .jet-aft::after {
+        right: 247px;
+        top: 43%;
+        border-color: transparent #cc0001 transparent transparent;
+    }
+
+    .product-content .racing-aft::after {
+        left: inherit;
+        right: -50px;
+        top: 43%;
+        border-color: transparent transparent transparent #cc0001;
+    }
+
+    /* .item-motos,
+    .item-racing,
+    .item-marine,
+    .item-jet {
+        grid-column: initial;
+
+    }
+
+    .item-acura {
+        grid-column: 1/ span 2;
+    } */
+
+
+    .footer-link {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .carousel {
+        height: 300px;
+    }
+
+    .product-content {
+        width: 100%;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 200px;
+        grid-template-areas:
+            "a b b"
+            "d d c"
+            "e f f"
+            "i i h"
+            "k l l"
+            "n n m"
+            "o p p"
+            "t t z"
+    }
+
+    .blu {
+        grid-area: a;
+    }
+
+    .item-autos {
+        grid-area: b;
+        grid-row: initial;
+    }
+
+    .motos-aft {
+        grid-area: c;
+    }
+
+    .item-motos {
+        grid-area: d;
+    }
+
+    .black {
+        grid-area: e;
+    }
+
+    .item-acura {
+        grid-area: f;
+    }
+
+    .mowre-title {
+        grid-area: h;
+    }
+
+    .item-mower {
+        grid-area: i;
+    }
+
+    .engnine-aft {
+        grid-area: k;
+    }
+
+    .item-engnine {
+        grid-area: l;
+    }
+
+    .marine-aft {
+        grid-area: m;
+    }
+
+    .item-marine {
+        grid-area: n;
+    }
+
+    .jet-aft {
+        grid-area: o;
+    }
+
+    .item-jet {
+        grid-area: p;
+    }
+
+    .racing-aft {
+        grid-area: z;
+    }
+
+    .item-racing {
+        grid-area: t;
+    }
+
+    .product-content .motos-aft::after,
+    .product-content .racing-aft::after {
+        right: inherit;
+        left: -45px;
+        top: 43%;
+        border-color: transparent #cc0001 transparent transparent;
+        z-index: 5;
+
+    }
+
+    .product-content .mowre-title::after {
+        left: -45px;
+        top: 43%;
+        border-color: transparent #fff transparent transparent;
+        z-index: 2;
+    }
+
+    .product-content .black::after {
+        left: inherit;
+        right: -45px;
+        top: 43%;
+        border-color: transparent transparent transparent #000;
+        z-index: 2;
+    }
+
+    .subvisible {
+        grid-template-columns: repeat(1, 1fr);
+
+    }
+
+    .subvisible-item h2{
+        padding:0 0 10px;
+    }
+    .subvisible-item p{
+        width: 80%;
+        padding: 25px 0;
+        font-size: 16px;
+    }
+    .business-title{
+        top:15%;
+    }
+    .business-title h1{
+        font-size: 30px;
+    }
+    .show-contact {
+        height: 300px;
+    }
+    .show-list {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .show-item .show-item-title p,
+    .show-item-2 p {
+        font-size: 16px;
+    }
+
+    .show-item .show-item-title h1,
+    .show-item-2 h1 {
+        font-size: 20px;
+    }
+
+    .show-item .show-item-title a,
+    .show-item-2 a {
+        font-size: 18px;
+    }
+
+    .footer-link {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .slider-alert-item .alert {
+        width: 38%;
+    }
+    .slider-alert-item .alert-1{
+       width:  33%
+    }
+    .show-contact-title p{
+        font-size: 23px;
+    }
+}
